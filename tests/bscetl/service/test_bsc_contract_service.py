@@ -34,7 +34,5 @@ from bscetl.service.bsc_contract_service import BscContractService
 def test_get_function_sighashes(bytecode, expected_sighashes, is_bep20):
     bsc_contract_service = BscContractService()
     sighashes = bsc_contract_service.get_function_sighashes(bytecode)
-    print('Sighashes:')
-    print(*sighashes, sep=', ')
     assert expected_sighashes == sighashes
     assert bsc_contract_service.is_bep20_contract(sighashes) == is_bep20

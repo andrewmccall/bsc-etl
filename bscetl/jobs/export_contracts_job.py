@@ -51,11 +51,9 @@ class ExportContractsJob(EthExportContractsJob):
 
         self.contract_service = BscContractService()
         self.contract_mapper = BscContractMapper()
-        print("SEE ME!")
 
 
     def _get_contract(self, contract_address, rpc_result):
-        print("Getting contract {}".format(contract_address))
         contract = self.contract_mapper.rpc_result_to_contract(contract_address, rpc_result)
         bytecode = contract.bytecode
         function_sighashes = self.contract_service.get_function_sighashes(bytecode)
