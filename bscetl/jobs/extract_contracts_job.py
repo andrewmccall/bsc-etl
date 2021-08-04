@@ -47,19 +47,15 @@ class ExtractContractsJob(BaseJob):
         self.contract_mapper = BscContractMapper()
 
     def _start(self):
-        print("opening export")
         self.item_exporter.open()
 
     def _export(self):
-        print("Running export")
         self.batch_work_executor.execute(self.traces_iterable, self._extract_contracts)
 
     def _extract_contracts(self, traces):
-        print ("extracting contracts")
         for trace in traces:
             trace['status'] = to_int_or_none(trace.get('status'))
             trace['block_number'] = to_int_or_none(trace.get('block_number'))
-            print(trace)
 
         contract_creation_traces = [trace for trace in traces
                                     if trace.get('trace_type') == 'create' and trace.get('to_address') is not None

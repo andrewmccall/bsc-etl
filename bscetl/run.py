@@ -18,9 +18,7 @@ def main():
     
         instructions = init_block.instructions
         push4_instructions.extend(([inst for inst in instructions if inst.name == 'PUSH4']))
-        
-    print(sorted(list(set('0x' + inst.operand for inst in push4_instructions))))
-
-
+    
+    
 if __name__ == "__main__":
     main()
