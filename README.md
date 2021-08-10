@@ -44,7 +44,7 @@ Export traces ([Schema](docs/schema.md#tracescsv), [Reference](docs/commands.md#
 Stream blocks, transactions, logs, token_transfers continually to console ([Reference](docs/commands.md#stream)):
 
 ```bash
-> pip3 install ethereum-etl[streaming]
+> pip3 install bsc-etl[streaming]
 > bscetl stream --start-block 500000 -e block,transaction,log,token_transfer --log-file log.txt \
 --provider-uri https://bsc-dataseed1.binance.org/v3/7aef3f0cd1f64408b163814b22cc643c
 ```
