@@ -1,7 +1,7 @@
-# Ethereum ETL
+# bsc ETL
 
-[![Build Status](https://travis-ci.com/blockchain-etl/ethereum-etl.png)](https://travis-ci.com/blockchain-etl/ethereum-etl)
-[![Join the chat at https://gitter.im/ethereum-eth](https://badges.gitter.im/ethereum-etl.svg)](https://gitter.im/ethereum-etl/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.com/blockchain-etl/bsc-etl.png)](https://travis-ci.com/blockchain-etl/bsc-etl)
+[![Join the chat at https://gitter.im/bsc-eth](https://badges.gitter.im/bsc-etl.svg)](https://gitter.im/bsc-etl/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Telegram](https://img.shields.io/badge/telegram-join%20chat-blue.svg)](https://t.me/joinchat/GsMpbA3mv1OJ6YMp3T5ORQ)
 [![Discord](https://img.shields.io/badge/discord-join%20chat-blue.svg)](https://discord.gg/wukrezR)
 
@@ -29,14 +29,14 @@ Export BEP20 transfers ([Schema](docs/schema.md#token_transferscsv), [Reference]
 
 ```bash
 > bscetl export_token_transfers --start-block 0 --end-block 500000 \
---provider-uri file://$HOME/Library/Ethereum/geth.ipc --output token_transfers.csv
+--provider-uri file://$HOME/Library/bsc/geth.ipc --output token_transfers.csv
 ```
 
 Export traces ([Schema](docs/schema.md#tracescsv), [Reference](docs/commands.md#export_traces)):
 
 ```bash
 > bscetl export_traces --start-block 0 --end-block 500000 \
---provider-uri file://$HOME/Library/Ethereum/parity.ipc --output traces.csv
+--provider-uri file://$HOME/Library/bsc/parity.ipc --output traces.csv
 ```
 
 ---
@@ -49,27 +49,26 @@ Stream blocks, transactions, logs, token_transfers continually to console ([Refe
 --provider-uri https://bsc-dataseed1.binance.org/v3/7aef3f0cd1f64408b163814b22cc643c
 ```
 
-Find other commands [here](https://ethereum-etl.readthedocs.io/en/latest/commands/).
+Find other commands [here](https://bsc-etl.readthedocs.io/en/latest/commands/).
 
 For the latest version, check out the repo and call 
 ```bash
 > pip3 install -e . 
-> python3 ethereumetl.py
+> python3 bscetl.py
 ```
 
 ## Useful Links
 
-- [Schema](https://ethereum-etl.readthedocs.io/en/latest/schema/)
-- [Command Reference](https://ethereum-etl.readthedocs.io/en/latest/commands/)
-- [Documentation](https://ethereum-etl.readthedocs.io/)
+- [Schema](https://bsc-etl.readthedocs.io/en/latest/schema/)
+- [Command Reference](https://bsc-etl.readthedocs.io/en/latest/commands/)
+- [Documentation](https://bsc-etl.readthedocs.io/)
 - [Public Datasets in BigQuery](https://github.com/blockchain-etl/public-datasets)  
-- [Exporting the Blockchain](https://ethereum-etl.readthedocs.io/en/latest/exporting-the-blockchain/)
-- [Querying in Amazon Athena](https://ethereum-etl.readthedocs.io/en/latest/amazon-athena/)
-- [Querying in Google BigQuery](https://ethereum-etl.readthedocs.io/en/latest/google-bigquery/)
-- [Querying in Kaggle](https://www.kaggle.com/bigquery/ethereum-blockchain)
-- [Airflow DAGs](https://github.com/blockchain-etl/ethereum-etl-airflow)
-- [Postgres ETL](https://github.com/blockchain-etl/ethereum-etl-postgresql)
-- [Ethereum 2.0 ETL](https://github.com/blockchain-etl/ethereum2-etl)
+- [Exporting the Blockchain](https://bsc-etl.readthedocs.io/en/latest/exporting-the-blockchain/)
+- [Querying in Amazon Athena](https://bsc-etl.readthedocs.io/en/latest/amazon-athena/)
+- [Querying in Google BigQuery](https://bsc-etl.readthedocs.io/en/latest/google-bigquery/)
+- [Querying in Kaggle](https://www.kaggle.com/bigquery/bsc-blockchain)
+- [Airflow DAGs](https://github.com/blockchain-etl/bsc-etl-airflow)
+- [Postgres ETL](https://github.com/blockchain-etl/bsc-etl-postgresql)
 
 ## Running Tests
 
@@ -93,7 +92,7 @@ For the latest version, check out the repo and call
 
 2. Build a docker image
         
-        > docker build -t ethereum-etl:latest .
+        > docker build -t bsc-etl:latest .
         > docker image ls
         
 3. Run a container out of the image
@@ -103,12 +102,12 @@ For the latest version, check out the repo and call
 
 4. Run streaming to console or Pub/Sub
 
-        > docker build -t ethereum-etl:latest -f Dockerfile .
+        > docker build -t bsc-etl:latest -f Dockerfile .
         > echo "Stream to console"
         > docker run bscetl-etl:latest stream --start-block 500000 --log-file log.txt
         > echo "Stream to Pub/Sub"
-        > docker run -v /path_to_credentials_file/:/ethereum-etl/ --env GOOGLE_APPLICATION_CREDENTIALS=/ethereum-etl/credentials_file.json bscetl-etl:latest stream --start-block 500000 --output projects/<your-project>/topics/crypto_ethereum
+        > docker run -v /path_to_credentials_file/:/bsc-etl/ --env GOOGLE_APPLICATION_CREDENTIALS=/bsc-etl/credentials_file.json bscetl-etl:latest stream --start-block 500000 --output projects/<your-project>/topics/crypto_bsc
 
-## Projects using Ethereum ETL
-* [Google](https://goo.gl/oY5BCQ) - Public BigQuery Ethereum datasets
-* [Nansen](https://www.nansen.ai/?ref=ethereumetl) - Analytics platform for Ethereum
+## Projects using BSC ETL
+
+** Add Some! ** 
