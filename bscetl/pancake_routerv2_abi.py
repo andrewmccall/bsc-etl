@@ -1,6 +1,6 @@
 import json
 
-PANCAKEV2_ABI = = json.loads('''
+PANCAKEV2_ABI = json.loads('''
 [
     {
         "inputs": [
