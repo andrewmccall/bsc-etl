@@ -1,11 +1,12 @@
-# bsc ETL
+# Binance Smart Chain (BSC) ETL
 
 [![Build Status](https://travis-ci.com/blockchain-etl/bsc-etl.png)](https://travis-ci.com/blockchain-etl/bsc-etl)
 [![Join the chat at https://gitter.im/bsc-eth](https://badges.gitter.im/bsc-etl.svg)](https://gitter.im/bsc-etl/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Telegram](https://img.shields.io/badge/telegram-join%20chat-blue.svg)](https://t.me/joinchat/GsMpbA3mv1OJ6YMp3T5ORQ)
 [![Discord](https://img.shields.io/badge/discord-join%20chat-blue.svg)](https://discord.gg/wukrezR)
 
-BSC ETL lets you convert blockchain data into convenient formats like CSVs and relational databases.
+BSC ETL lets you convert blockchain data into convenient formats like CSVs and relational databases. Based around and uses
+the ([ethereum-etl](https://github.com/blockchain-etl/ethereum-etl)) as a library. 
 
 [Full documentation available here](http://bsc-etl.readthedocs.io/).
 
